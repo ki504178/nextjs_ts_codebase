@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# ステージングされたts,tsxファイルをスペース区切りで取得
+files=`git diff --cached --name-only | grep -E "*.ts|tsx$" | tr "\r\n" " " | tr "\n" " "`
+
+if [ -n ${files} && ${#files(@)} > 0 ]; then
+  echo "[pre-commit] Find *.tx|tsx, Exec ESLint & Prettier fix."
+
+  yarn format:fix $files
+  ret=$?
+  if [ $ret != 0 ]; then
+    echo "[pre-commit] Prettier fix error."
+    exit $ret
+  fi
+
+  yarn eslint:fix $files
+  ret=$?
+  if [ $ret != 0 ]; then
+    echo "[pre-commit] ESLint fix error."
+    exit $ret
+  fi
+fi
+
+exit 0
