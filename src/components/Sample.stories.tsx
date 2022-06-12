@@ -1,5 +1,5 @@
 import { ComponentStoryObj } from '@storybook/react'
-import { Sample } from '@/components/Sample'
+import { Sample } from './Sample'
 
 type Story = ComponentStoryObj<typeof Sample>
 
