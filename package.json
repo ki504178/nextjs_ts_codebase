@@ -7,9 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "format:fix": "prettier --write",
+    "eslint:fix": "eslint --fix",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prepare": "husky install"
   },
   "dependencies": {
     "next": "12.1.6",
@@ -37,8 +40,12 @@
     "eslint": "8.17.0",
     "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.0",
     "jest": "^28.1.1",
     "jest-environment-jsdom": "^28.1.1",
+    "lint-staged": "^13.0.1",
     "msw": "^0.42.1",
     "msw-storybook-addon": "^1.6.3",
     "prettier": "^2.6.2",
