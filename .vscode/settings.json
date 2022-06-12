@@ -8,7 +8,7 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": ["source.addMissingImports", "source.fixAll.eslint"],
+  "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
   "git.autofetch": true,
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
