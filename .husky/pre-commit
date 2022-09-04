@@ -4,7 +4,7 @@
 # ステージングされたts,tsxファイルをスペース区切りで取得
 files=`git diff --cached --name-only | grep -E "*.ts|tsx$" | tr "\r\n" " " | tr "\n" " "`
 
-if [ -n ${files} && ${#files(@)} > 0 ]; then
+if [ -n "${files}" ]; then
   echo "[pre-commit] Find *.tx|tsx, Exec ESLint & Prettier fix."
 
   yarn format:fix $files

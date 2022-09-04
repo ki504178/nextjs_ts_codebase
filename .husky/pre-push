@@ -2,15 +2,15 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # commitされたts,tsxファイルを取得
-files=`git log HEAD^..HEAD --name-only --oneline | grep -E "*.ts|tsx$"`
+files=`git log HEAD^..HEAD --name-only --oneline | grep -E "*.ts|tsx$" | tr "\r\n" " " | tr "\n" " "`
 
-if [ -n ${files} && ${#files(@)} > 0 ]; then
+if [ -n "${files}" ]; then
   echo "[pre-push] Find *.tx|tsx, Exec Typechecking"
 
   yarn tsc
   ret=$?
   if [ $ret != 0 ]; then
-    echo "[pre-commit] Typechecking error."
+    echo "[pre-push] Typechecking error."
     exit $ret
   fi
 fi
