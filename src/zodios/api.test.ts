@@ -2,14 +2,14 @@ import { getPetById } from './api'
 
 describe('zodios/api', () => {
   test('get', async () => {
-    const ret = await getPetById(11)
+    const ret = await getPetById(10)
 
     expect(ret).toStrictEqual({
-      id: 11,
-      name: 'Toby',
+      id: 10,
       category: { id: 1, name: 'Dogs' },
-      photoUrls: ['https://skycms.s3.amazonaws.com/images/5495100/cachorro-card-1.png'],
-      tags: [{ id: 1, name: 'litlle' }],
+      name: 'doggie',
+      photoUrls: ['string'],
+      tags: [{ id: 0, name: 'string' }],
       status: 'available',
     })
   })
