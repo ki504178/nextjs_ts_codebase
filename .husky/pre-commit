@@ -5,19 +5,12 @@
 files=`git diff --cached --name-only | grep -E "*.ts|tsx$" | tr "\r\n" " " | tr "\n" " "`
 
 if [ -n "${files}" ]; then
-  echo "[pre-commit] Find *.tx|tsx, Exec ESLint & Prettier fix."
+  echo "[pre-commit] Find *.tx|tsx, Exec lint."
 
-  yarn format:fix $files
+  pnpm lint:fix $files
   ret=$?
   if [ $ret != 0 ]; then
-    echo "[pre-commit] Prettier fix error."
-    exit $ret
-  fi
-
-  yarn eslint:fix $files
-  ret=$?
-  if [ $ret != 0 ]; then
-    echo "[pre-commit] ESLint fix error."
+    echo "[pre-commit] Lint error."
     exit $ret
   fi
 fi

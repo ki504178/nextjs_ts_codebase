@@ -7,7 +7,7 @@ files=`git log HEAD^..HEAD --name-only --oneline | grep -E "*.ts|tsx$" | tr "\r\
 if [ -n "${files}" ]; then
   echo "[pre-push] Find *.tx|tsx, Exec Typechecking"
 
-  yarn tsc
+  pnpm tsc
   ret=$?
   if [ $ret != 0 ]; then
     echo "[pre-push] Typechecking error."

@@ -1,4 +1,4 @@
-const path = require("path");
+const path = require("node:path");
 module.exports = {
 	stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
 	addons: [

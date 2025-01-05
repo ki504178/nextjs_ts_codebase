@@ -1,4 +1,4 @@
-import { ComponentStoryObj } from "@storybook/react";
+import type { ComponentStoryObj } from "@storybook/react";
 import { Sample } from "./Sample";
 
 type Story = ComponentStoryObj<typeof Sample>;
