@@ -1,0 +1,22 @@
+.button {
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	text-decoration: none;
+	width: 100%;
+	max-width: 320px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+}
+
+.primary {
+	background-color: #007bff;
+}
+
+.secondary {
+	background-color: #6c757d;
+}

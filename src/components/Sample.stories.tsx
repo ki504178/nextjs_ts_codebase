@@ -1,7 +1,7 @@
-import type { ComponentStoryObj } from "@storybook/react";
+import type { StoryObj } from "@storybook/react";
 import { Sample } from "./Sample";
 
-type Story = ComponentStoryObj<typeof Sample>;
+type Story = StoryObj<typeof Sample>;
 
 const config = {
 	component: Sample,
