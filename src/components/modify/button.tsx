@@ -25,14 +25,7 @@ type Props<E extends ElementType = "button"> = PolymorphicProps<E, ThemeProps>;
 export const Button = forwardRef(function button<
 	E extends ElementType = "button",
 >(
-	{
-		tag,
-		color = "primary",
-		type = "primary",
-		children,
-		disabled,
-		...props
-	}: Props<E>,
+	{ tag, color = "primary", children, disabled, ...props }: Props<E>,
 	ref: ForwardedRef<ComponentPropsWithoutRef<E>["ref"]>,
 ) {
 	const Tag = tag || "button";
